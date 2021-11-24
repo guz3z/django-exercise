@@ -5,3 +5,6 @@ from django.http import HttpResponse
 # Create your views here.
 def home(request):
     return HttpResponse("<h1>Welcome to the Library</h1>")
+
+def library(request):
+    return HttpResponse("<h1>This is the library page</h1>")
