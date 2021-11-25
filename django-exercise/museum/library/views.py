@@ -3,14 +3,20 @@ from django.http import HttpResponse
 from .models import all_books
 
 # Create your views here.
+def not_found_404(request, exception):
+    data = { 'err': exception }
+    return render(request, './404.html', data)
+
+def server_error_500(request):
+    return render(request, './500.html')
+
+
 def home(request):
-    return HttpResponse("<h1>Welcome to the Library</h1>")
+    # return HttpResponse("<h1>Welcome to the Library</h1>")
+    return render(request, 'base.html')
 
 def books(request):
-    return HttpResponse(
-        "<h1>These are all our books:</h1>"
-        f"<p>{all_books}</p>"
-    )
+    return render(request, 'home.html')
 
 def show(request, id):
     book = list(filter(lambda books: books['id'] == id, all_books))
