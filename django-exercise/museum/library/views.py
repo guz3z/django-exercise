@@ -6,9 +6,6 @@ from .models import all_books
 def home(request):
     return HttpResponse("<h1>Welcome to the Library</h1>")
 
-# def library(request):
-#     return HttpResponse("<h1>This is the library page</h1>")
-
 def books(request):
     return HttpResponse(
         "<h1>These are all our books:</h1>"
@@ -22,10 +19,3 @@ def show(request, id):
         f"<p>The title of this book is {book[0]['title']}.</p>"
         f"<p>The author of this book is {book[0]['author']}</p>"
     )
-
-# def show(request, id):
-#     Individual_book = list(filter(lambda book: book['id'] == id, books))
-#     return HttpResponse(
-#         f"<h1>This page is for book number: {id}</h1>"
-#         f"<p>The name of the book is {ind[0]['title']}</p>"
-#     )
