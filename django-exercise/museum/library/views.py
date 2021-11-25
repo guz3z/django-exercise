@@ -11,7 +11,7 @@ def home(request):
 
 def books(request):
     return HttpResponse(
-        "<h1>These are all our books</h1>"
+        "<h1>These are all our books:</h1>"
         f"<p>{all_books}</p>"
     )
 
@@ -20,6 +20,7 @@ def show(request, id):
     return HttpResponse(
         f"<h1>This page is for book number: {id}</h1>"
         f"<p>The title of this book is {book[0]['title']}.</p>"
+        f"<p>The author of this book is {book[0]['author']}</p>"
     )
 
 # def show(request, id):
