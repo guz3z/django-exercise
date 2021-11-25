@@ -11,17 +11,16 @@ def server_error_500(request):
     return render(request, './500.html')
 
 
-def home(request):
-    # return HttpResponse("<h1>Welcome to the Library</h1>")
+def homepage(request):
     return render(request, 'base.html')
 
 def books(request):
     return render(request, 'home.html')
 
-def show(request, id):
-    book = list(filter(lambda books: books['id'] == id, all_books))
-    return HttpResponse(
-        f"<h1>This page is for book number: {id}</h1>"
-        f"<p>The title of this book is {book[0]['title']}.</p>"
-        f"<p>The author of this book is {book[0]['author']}</p>"
-    )
+# def show(request, id):
+#     # book = list(filter(lambda books: books['id'] == id, all_books))
+#     # return HttpResponse(
+#     #     f"<h1>This page is for book number: {id}</h1>"
+#     #     f"<p>The title of this book is {book[0]['title']}.</p>"
+#     #     f"<p>The author of this book is {book[0]['author']}</p>"
+#     # )
