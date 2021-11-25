@@ -10,12 +10,12 @@
     <nav>
         <a href="{% url 'museum-home' %}">Home</a>
         <a href="{% url 'library-books' %}">Library</a>
+        <a href="{% url 'library-show' %}">Book</a>
     </nav>      
     <div>
         {% block content %}
             <h1>Welcome to the Museum</h1>
             <h2>Check out the Library for books</h2>
-            <p>what is going on?</p>
         {% endblock content %}
     </div>
     

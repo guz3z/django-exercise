@@ -17,10 +17,12 @@ def homepage(request):
 def books(request):
     return render(request, 'home.html')
 
-# def show(request, id):
-#     # book = list(filter(lambda books: books['id'] == id, all_books))
-#     # return HttpResponse(
-#     #     f"<h1>This page is for book number: {id}</h1>"
-#     #     f"<p>The title of this book is {book[0]['title']}.</p>"
-#     #     f"<p>The author of this book is {book[0]['author']}</p>"
-#     # )
+def show(request, id):
+    book = list(filter(lambda books: books['id'] == id, all_books))
+    data = { 'book': book[0]}
+    return render(request, 'book.html', data)
+    # return HttpResponse(
+    #     f"<h1>This page is for book number: {id}</h1>"
+    #     f"<p>The title of this book is {book[0]['title']}.</p>"
+    #     f"<p>The author of this book is {book[0]['author']}</p>"
+    # )
